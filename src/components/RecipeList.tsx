@@ -3,7 +3,12 @@ import { Link } from 'react-router-dom'
 // styles
 import './RecipeList.css'
 
-export default function RecipeList({ recipes }) {
+interface Recipes {
+  id: number,
+
+}
+
+export default function RecipeList({ id }): React.FC<Recipes> {
 
   if (recipes.length === 0) {
     return <div className="error">No recipes to load...</div>

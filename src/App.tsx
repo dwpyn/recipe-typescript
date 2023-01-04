@@ -22,19 +22,6 @@ function App() {
             <Route path='search' element={<Search />} />
             <Route path='recipes/:id' element={<Recipe />} />
           </Route>
-
-          {/* <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/create">
-            <Create />
-          </Route>
-          <Route path="/search">
-            <Search />
-          </Route>
-          <Route path="/recipes/:id">
-            <Recipe />
-          </Route> */}
         </Routes>
       </BrowserRouter>
     </div>

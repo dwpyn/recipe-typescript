@@ -10,18 +10,18 @@ export default function Create() {
   const [method, setMethod] = useState('')
   const [cookingTime, setCookingTime] = useState('')
   const [newIngredient, setNewIngredient] = useState('')
-  const [ingredients, setIngredients] = useState([])
-  const ingredientInput = useRef(null)
+  const [ingredients, setIngredients] = useState<any[]>([])
+  const ingredientInput = useRef<any | null>(null)
 
   const { postData, data } = useFetch('http://localhost:3000/recipes', 'POST')
   const navigate = useNavigate()
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     postData({ title, ingredients, method, cookingTime: cookingTime + ' minutes' })
   }
 
-  const handleAdd = (e) => {
+  const handleAdd = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const ing = newIngredient.trim()
 
